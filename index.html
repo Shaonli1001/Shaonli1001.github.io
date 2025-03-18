@@ -1,1 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Game Dev Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
 
+        body {
+            background: #f9f1f8;
+            color: #5d5a6e;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: #fff0f6;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 4px solid #ffd6e8;
+        }
+
+        h1 {
+            color: #ff85b3;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #b19cd9;
+            font-size: 1.2em;
+        }
+
+        .section {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: #ff85b3;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .game-card {
+            background: #fff0f6;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .game-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .game-title {
+            color: #5d5a6e;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            background: #b19cd9;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-links a {
+            color: #ff85b3;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            color: #b19cd9;
+        }
+
+        @media (max-width: 600px) {
+            .game-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://via.placeholder.com/150" alt="Profile" class="profile-pic">
+            <h1>Your Name</h1>
+            <p class="subtitle">Game Developer & Designer</p>
+        </header>
+
+        <div class="section">
+            <h2>About Me</h2>
+            <p>Hello! I'm a passionate game developer who loves creating cute and immersive gaming experiences. 
+            I specialize in 2D platformers and cozy narrative games with a sprinkle of magic!</p>
+        </div>
+
+        <div class="section">
+            <h2>My Games</h2>
+            <div class="game-grid">
+                <div class="game-card">
+                    <img src="https://via.placeholder.com/250x150" alt="Game 1">
+                    <div class="game-title">Dreamy Meadows</div>
+                    <p>A cozy farming adventure with adorable animals</p>
+                </div>
+                <div class="game-card">
+                    <img src="https://via.placeholder.com/250x150" alt="Game 2">
+                    <div class="game-title">Starry Quest</div>
+                    <p>A magical platformer under the night sky</p>
+                </div>
+                <div class="game-card">
+                    <img src="https://via.placeholder.com/250x150" alt="Game 3">
+                    <div class="game-title">Petal Pals</div>
+                    <p>A multiplayer flower-collecting adventure</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Skills</h2>
+            <div class="skills-list">
+                <span class="skill">Unity</span>
+                <span class="skill">C#</span>
+                <span class="skill">Pixel Art</span>
+                <span class="skill">Game Design</span>
+                <span class="skill">Level Design</span>
+                <span class="skill">Godot</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Contact Me</h2>
+            <div class="contact-links">
+                <a href="#">Twitter</a>
+                <a href="#">Itch.io</a>
+                <a href="#">Email</a>
+                <a href="#">GitHub</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
