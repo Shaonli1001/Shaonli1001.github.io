@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Game Dev Portfolio</title>
+    <title>Shaonli Sen's Game Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -13,126 +13,371 @@
         }
 
         body {
-            background: #f9f1f8;
-            color: #5d5a6e;
+            background: #f4f1e9;
+            color: #4a4035;
             line-height: 1.6;
-            padding: 20px;
+            padding: 30px;
+            background-image: url('data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23d9d2c5" fill-opacity="0.2" fill-rule="evenodd"%3E%3Cpath d="M0 40L40 0H20L0 20zM40 40V20L20 40z"/%3E%3C/g%3E%3C/svg%3E');
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         header {
+            background: #e8dcca;
+            padding: 50px 20px;
             text-align: center;
-            padding: 40px 0;
-            background: #fff0f6;
-            border-radius: 20px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 25px 25px 0 0;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            border: 4px solid #ffd6e8;
+        .header-leaf {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2em;
+            color: #8b9e72;
+            animation: sway 2s infinite ease-in-out;
+        }
+
+        @keyframes sway {
+            0%, 100% { transform: translateX(-50%) rotate(-5deg); }
+            50% { transform: translateX(-50%) rotate(5deg); }
         }
 
         h1 {
-            color: #ff85b3;
-            font-size: 2.5em;
+            color: #8b9e72;
+            font-size: 2.8em;
             margin-bottom: 10px;
         }
 
         .subtitle {
-            color: #b19cd9;
-            font-size: 1.2em;
+            color: #b39f7a;
+            font-size: 1.1em;
+        }
+
+        .content {
+            background: #fffcf5;
+            padding: 30px;
+            border-radius: 0 0 25px 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
         .section {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
         }
 
         h2 {
-            color: #ff85b3;
-            margin-bottom: 20px;
-            font-size: 1.8em;
+            color: #8b9e72;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            border-bottom: 2px dotted #d9d2c5;
+            padding-bottom: 5px;
         }
 
-        .game-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        .project-list {
+            display: flex;
+            flex-direction: column;
             gap: 20px;
         }
 
-        .game-card {
-            background: #fff0f6;
-            padding: 20px;
+        .project {
+            background: #f4f1e9;
+            padding: 15px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .project img {
+            width: 120px;
+            height: 80px;
+            object-fit: cover;
             border-radius: 10px;
+            border: 3px solid #d9d2c5;
             transition: transform 0.3s ease;
         }
 
-        .game-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        .project:hover img {
+            transform: scale(1.05);
         }
 
-        .game-card img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 10px;
+        .project-info {
+            flex: 1;
         }
 
-        .game-title {
-            color: #5d5a6e;
+        .project-title a {
+            color: #4a4035;
             font-weight: bold;
             margin-bottom: 5px;
+            text-decoration: none;
         }
 
-        .skills-list {
+        .project-title a:hover {
+            color: #8b9e72;
+        }
+
+        .project-details {
+            font-size: 0.9em;
+            color: #6b5e4a;
+        }
+
+        .button {
+            display: inline-block;
+            background: #8b9e72;
+            color: #fffcf5;
+            padding: 8px 16px;
+            border-radius: 15px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background: #b39f7a;
+            transform: scale(1.05);
+        }
+
+        .skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
 
         .skill {
-            background: #b19cd9;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
+            background: #b39f7a;
+            color: #fffcf5;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            transition: background 0.3s ease;
         }
 
-        .contact-links {
+        .skill:hover {
+            background: #8b9e72;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #8b9e72;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .timeline-item::before {
+            content: '🌱';
+            position: absolute;
+            left: -28px;
+            color: #8b9e72;
+            font-size: 1.2em;
+        }
+
+        .timeline-item h3 {
+            color: #4a4035;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item p {
+            font-size: 0.95em;
+            color: #6b5e4a;
+        }
+
+        .featured-project {
+            background: #e8dcca;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-project img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border: 3px solid #d9d2c5;
+            border-radius: 10px;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+
+        .featured-project h3 {
+            color: #4a4035;
+            margin: 10px 0;
+        }
+
+        .inspiration-gallery-wrapper {
+            overflow: hidden;
+            position: relative;
+            padding: 10px 0;
+        }
+
+        .inspiration-gallery {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
+            gap: 15px;
+            animation: slide 20s infinite linear;
+            white-space: nowrap;
         }
 
-        .contact-links a {
-            color: #ff85b3;
+        .inspiration-gallery:hover {
+            animation-play-state: paused;
+        }
+
+        .inspiration-item {
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        .inspiration-item img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 3px solid #d9d2c5;
+            transition: transform 0.3s ease;
+        }
+
+        .inspiration-item:hover img {
+            transform: scale(1.05);
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-1000px); }
+        }
+
+        .current-focus {
+            text-align: center;
+            perspective: 1000px;
+        }
+
+        .focus-card-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto 20px auto; /* Added bottom margin to prevent overlap */
+            min-height: 150px; /* Ensure space is reserved */
+        }
+
+        .focus-card {
+            width: 100%;
+            height: 100%;
+            background: #f4f1e9;
+            padding: 20px;
+            border-radius: 15px;
+            transition: transform 0.6s ease;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        .focus-card:hover {
+            transform: rotateY(180deg);
+        }
+
+        .focus-front, .focus-back {
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            color: #4a4035;
+            padding: 10px;
+        }
+
+        .focus-front {
+            background: #f4f1e9;
+        }
+
+        .focus-back {
+            background: #e8dcca;
+            transform: rotateY(180deg);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .contact, .resources {
+            text-align: center;
+        }
+
+        .contact a, .resources a {
+            color: #8b9e72;
             text-decoration: none;
+            margin: 0 10px;
             font-weight: bold;
             transition: color 0.3s ease;
         }
 
-        .contact-links a:hover {
-            color: #b19cd9;
+        .contact a:hover, .resources a:hover {
+            color: #b39f7a;
+        }
+
+        footer {
+            background: #e8dcca;
+            padding: 20px;
+            text-align: center;
+            border-radius: 25px;
+            margin-top: 30px;
+            color: #4a4035;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #8b9e72;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #b39f7a;
         }
 
         @media (max-width: 600px) {
-            .game-grid {
-                grid-template-columns: 1fr;
+            .project {
+                flex-direction: column;
+                text-align: center;
+            }
+            .project img {
+                width: 100%;
+                height: 150px;
+            }
+            .inspiration-gallery-wrapper {
+                overflow-x: auto;
+            }
+            .inspiration-gallery {
+                animation: none;
+                display: flex;
+                flex-wrap: nowrap;
+            }
+            .focus-card-wrapper {
+                width: 90%;
+                margin: 0 auto 20px auto;
             }
         }
     </style>
@@ -140,59 +385,169 @@
 <body>
     <div class="container">
         <header>
-            <img src="https://via.placeholder.com/150" alt="Profile" class="profile-pic">
-            <h1>Your Name</h1>
-            <p class="subtitle">Game Developer & Designer</p>
+            <div class="header-leaf">🍃</div>
+            <h1>Shaonli Sen</h1>
+            <p class="subtitle">Aspiring Game Developer and Graphics Programmer</p>
         </header>
+        <div class="content">
+            <div class="section">
+                <h2>About Me</h2>
+                <p>Welcome to my portfolio! I'm Shaonli Sen, an aspiring game developer and graphics programmer with a passion for crafting immersive and innovative gaming experiences. I thrive on blending technical skills with creative problem-solving, constantly exploring new tools and techniques to bring game worlds to life. When I'm not coding, you can find me delving into latest titles and experiencing them from a developer's perspective.</p>
+            </div>
 
-        <div class="section">
-            <h2>About Me</h2>
-            <p>Hello! I'm a passionate game developer who loves creating cute and immersive gaming experiences. 
-            I specialize in 2D platformers and cozy narrative games with a sprinkle of magic!</p>
-        </div>
-
-        <div class="section">
-            <h2>My Games</h2>
-            <div class="game-grid">
-                <div class="game-card">
-                    <img src="https://via.placeholder.com/250x150" alt="Game 1">
-                    <div class="game-title">Dreamy Meadows</div>
-                    <p>A cozy farming adventure with adorable animals</p>
-                </div>
-                <div class="game-card">
-                    <img src="https://via.placeholder.com/250x150" alt="Game 2">
-                    <div class="game-title">Starry Quest</div>
-                    <p>A magical platformer under the night sky</p>
-                </div>
-                <div class="game-card">
-                    <img src="https://via.placeholder.com/250x150" alt="Game 3">
-                    <div class="game-title">Petal Pals</div>
-                    <p>A multiplayer flower-collecting adventure</p>
+            <div class="section">
+                <h2>Featured Project</h2>
+                <div class="featured-project">
+                    <img src="Asteroids.png" alt="RPG Spotlight">
+                    <h3>ASTEROIDS</h3>
+                    <p>My proudest work: A sleek arcade style bullet- hell retro shooter based on the popular Atari release "asteroid"</p>
+                    <a href="https://heyitsshai.itch.io/asteriods" class="button" target="_blank">Play Demo</a>
                 </div>
             </div>
-        </div>
-
-        <div class="section">
-            <h2>Skills</h2>
-            <div class="skills-list">
-                <span class="skill">Unity</span>
-                <span class="skill">C#</span>
-                <span class="skill">Pixel Art</span>
-                <span class="skill">Game Design</span>
-                <span class="skill">Level Design</span>
-                <span class="skill">Godot</span>
+            <div class="section">
+                <h2>My Projects</h2>
+                <div class="project-list">
+		<div class="project">
+                        <img src="Flappy Bird.png" alt="Flappy Bird">
+                        <div class="project-info">
+                            <div class="project-title"><b>Flappy Bird</b></div>
+                            <p>Developed using DirectX, this project showcases efficient rendering, lighting, and interactive collision environments. It demonstrates core principles of game development</p>
+                            <div class="project-details">
+                                <p><strong>Features:</strong>DirectX API, Win32 API(x86), AABB collision, Testing, Object-Oriented Programming Paradigm, Data Structures and Algorithms</p>
+                                <p><strong>Tools: </strong>DirectX, C++</p>
+                                <a href="https://github.com/Shaonli1001/Flappy-Bird" class="button" target="_blank">View Source</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="Kitchen Chaos.png" alt="Kitchen Chaos">
+                        <div class="project-info">
+                            <div class="project-title"><b>Kitchen Chaos</b></div>
+                            <p>A strategic single player based on Overcooked where you juggle every role in the kitchen.</p>
+                            <div class="project-details">
+                                <p><strong>Features:</strong>Clean and scalable code, Design patterns like singleton and observer pattern, scripatable object.</p>
+                                <p><strong>Tools:</strong>Unity 6, C#</p>
+                                <a href="https://github.com/Shaonli1001/KitchenChaos" class="button" target="_blank">View Source</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="Tank.png" alt="TankGame">
+                        <div class="project-info">
+                            <div class="project-title"><b>TankGame</b></div>
+                            <p>A simple yet engaging tank combat game developed in Unreal Engine 5 using C++.</p>
+                            <div class="project-details">
+                                <p><strong>Features:</strong> Tank movement, shooting system, basic AI</p>
+                                <p><strong>Tools:</strong> Unreal Engine 5, C++</p>
+                                <a href="https://github.com/Shaonli1001/TankGame" class="button" target="_blank">View Source</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="Render Engine.png" alt="Game Engine ">
+                        <div class="project-info">
+                            <div class="project-title"><b>Render Engine using OpenGL</b></div>
+                            <p>An OpenGL project showcasing realtime graphics and rendering</p>
+                            <div class="project-details">
+                                <p><strong>Features:</strong>3D rendering,Texture Mapping, Camera Controls</p>
+                                <p><strong>Tools:</strong>OpenGL, C++</p>
+                                <a href="https://github.com/Shaonli1001/OpenGl" class="button" target="_blank">View Source</a>
+                            </div>
+                        </div>
+                    </div>
+			<div class="project">
+                        <img src="Food Ninja.png" alt="Food Ninja">
+                        <div class="project-info">
+                            <div class="project-title"><b>Food Ninja</b></div>
+                            <p>A fruit ninja inspired slasher made with Unity showcasing a diverse difficulty system</p>
+                            <div class="project-details">
+                                <p><strong>Features:</strong>Difficulty levels, Object Pooling, Edge Case Tested</p>
+                                <p><strong>Tools:</strong>Unity, C#</p>
+                                <a href="https://heyitsshai.itch.io/food-ninja" class="button" target="_blank">Play Demo</a>
+                                <a href="https://github.com/Shaonli1001/Food-Ninja" class="button" target="_blank">View Source</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="Pixel Blaster.png" alt="Platformer">
+                        <div class="project-info">
+                            <div class="project-title"><b>Pixel Blaster</b></div>
+                            <p>A platformer shooter made using Unreal Engine 5.</p>
+                            <div class="project-details">
+                                <p><strong>Features:</strong> Fluid Movement, Stylised Visual, Lowpoly</p>
+                                <p><strong>Tools:</strong> Unreal Engine 5, Blueprints</p>
+                                <a href="https://github.com/Shaonli1001/Platformer" class="button" target="_blank">View Source</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="section">
-            <h2>Contact Me</h2>
-            <div class="contact-links">
-                <a href="#">Twitter</a>
-                <a href="#">Itch.io</a>
-                <a href="#">Email</a>
-                <a href="#">GitHub</a>
+            <div class="section">
+                <h2>Skills & Tools</h2>
+                <div class="skills">
+                    <span class="skill">Unreal Engine</span>
+                    <span class="skill">C++</span>
+                    <span class="skill">Blueprints</span>
+                    <span class="skill">Unity</span>
+                    <span class="skill">C#</span>
+                    <span class="skill">DirectX</span>
+                    <span class="skill">OpenGL</span>
+                    <span class="skill">Shader Programming</span>
+                    <span class="skill">Git</span>
+                    <span class="skill">Problem Solving</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Learning Journey</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>2023 - Exploring Game Development</h3>
+                        <p>Started with Unity to build foundational game programming skills, working on small projects.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>2024 - Diving into AAA Game Development</h3>
+                        <p>Began learning Unreal Engine 5 by using both C++ and Blueprints to master game mechanics.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>2025 - Graphics Programming</h3>
+                        <p>Explored OpenGL and DirectX to make custom engines and games.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section current-focus">
+                <h2>Current Focus</h2>
+                <div class="focus-card-wrapper">
+                    <div class="focus-card">
+                        <div class="focus-front">
+                            <h3>Next Big Project</h3>
+                            <p>Working on a multiplayer co-op game in Unreal Engine 5.</p>
+                        </div>
+                        <div class="focus-back">
+                            <h3>Details</h3>
+                            <p>Exploring networking, co-op mechanics, and dynamic environments. Stay tuned!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section resources">
+                <h2>Resources</h2>
+	 <p>Check out my resume: <a style = "color: White" href="#" class="button" target="_blank">View Resume</a></p>
+            </div>
+            <div class="section contact">
+                <h2>Get in Touch</h2>
+                <p>
+                    <a href="https://github.com/Shaonli1001" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/shaonli-sen-72b299284" target="_blank">LinkedIn</a>
+                    <a href="mailto:senshaonli.02@gmail.com">Email</a>
+                    <a href="https://www.instagram.com/wtfshaiiii/" target="_blank">Instagram</a>
+                </p>
             </div>
         </div>
     </div>
+    <footer>
+        <p>© 2025 Shaonli Sen. Built with 🌿 and code. <a href="https://github.com/Shaonli1001" target="_blank">View Source</a></p>
+    </footer>
 </body>
 </html>
